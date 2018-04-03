@@ -9,6 +9,8 @@
 #include <atomic>
 #include <array>
 #include <math.h>
+#include <iostream>
+#include <fstream>
 
 namespace librealsense
 {

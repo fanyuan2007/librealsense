@@ -53,9 +53,9 @@ endif()
 
 # This parameter is meant for disabling graphical examples when building for
 # save-to-disk targets.
-option(BUILD_GRAPHICAL_EXAMPLES "Build graphical examples and tools." ON)
+option(BUILD_GRAPHICAL_EXAMPLES "Build graphical examples and tools." OFF)
 
-option(BUILD_WITH_OPENMP "Use OpenMP" ON)
+option(BUILD_WITH_OPENMP "Use OpenMP" OFF)
 
 if(ANDROID_NDK_TOOLCHAIN_INCLUDED)
     unset(WIN32)
@@ -83,7 +83,7 @@ if(BUILD_WITH_OPENMP)
     endif()
 endif()
 
-option(BUILD_EASYLOGGINGPP "Build EasyLogging++ as a part of the build" ON)
+option(BUILD_EASYLOGGINGPP "Build EasyLogging++ as a part of the build" OFF)
 
 if (BUILD_EASYLOGGINGPP)
     add_definitions(-DBUILD_EASYLOGGINGPP)
@@ -480,7 +480,7 @@ if(WIN32)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
     add_definitions(-D__SSSE3__ -D_CRT_SECURE_NO_WARNINGS)
 
-    set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+    set_property(GLOBAL PROPERTY USE_FOLDERS OFF)
 elseif(APPLE)
     set(FORCE_LIBUVC ON)
 else()
@@ -572,7 +572,7 @@ if(TRACE_API)
     add_definitions(-DTRACE_API)
 endif()
 
-option(HWM_OVER_XU "Send HWM commands over UVC XU control" ON)
+option(HWM_OVER_XU "Send HWM commands over UVC XU control" OFF)
 if(HWM_OVER_XU)
     add_definitions(-DHWM_OVER_XU)
 endif()
@@ -663,8 +663,8 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/realsense2Config.cmake"
 
 install(CODE "execute_process(COMMAND ldconfig)")
 
-option(BUILD_UNIT_TESTS "Build realsense unit tests." ON)
-option(BUILD_EXAMPLES "Build realsense examples and tools." ON)
+option(BUILD_UNIT_TESTS "Build realsense unit tests." OFF)
+option(BUILD_EXAMPLES "Build realsense examples and tools." OFF)
 option(ENFORCE_METADATA "Require WinSDK with Metadata support during compilation. Windows OS Only" OFF)
 option(BUILD_PYTHON_BINDINGS "Build Python bindings" OFF)
 option(BUILD_CV_EXAMPLES "Build OpenCV examples" OFF)

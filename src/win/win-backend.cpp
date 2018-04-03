@@ -249,7 +249,7 @@ namespace librealsense
                         std::string path;
                         path.reserve(temp.length());
                         for (wchar_t ch : temp) {
-                            if (ch != L'{') path.push_back(std::tolower(((char*)&ch)[0]));
+                            if (ch != L'{') path.push_back(tolower(((char*)&ch)[0]));
                             else break;
                         }
 
